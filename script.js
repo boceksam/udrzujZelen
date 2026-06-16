@@ -1,10 +1,5 @@
 const revealElements = document.querySelectorAll(".reveal");
-const parallaxLayers = document.querySelectorAll(".parallax-layer");
-const interactiveCards = document.querySelectorAll(
-  ".service-card, .price-card, .gallery-card, .mosaic-card, .hero-photo-card, .feature-list article"
-);
-const zoomableCards = document.querySelectorAll(".gallery-card, .mosaic-card");
-const canUseTilt = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+const zoomableCards = document.querySelectorAll(".mosaic-card");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -20,44 +15,53 @@ const revealObserver = new IntersectionObserver(
 
 revealElements.forEach((element) => revealObserver.observe(element));
 
-const updateParallax = () => {
-  const scrollOffset = window.scrollY * 0.08;
-  parallaxLayers.forEach((layer) => {
-    layer.style.transform = `translateY(${scrollOffset}px)`;
-  });
-};
-
-window.addEventListener("scroll", updateParallax, { passive: true });
-updateParallax();
-
 if (zoomableCards.length) {
   const lightbox = document.createElement("div");
   lightbox.className = "lightbox";
-  lightbox.innerHTML = '<button type="button" aria-label="Zavřít náhled">×</button><img alt="Zvětšený náhled">';
+  lightbox.innerHTML = `
+    <button class="lightbox-close" type="button" aria-label="Zavřít náhled">×</button>
+    <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Předchozí fotografie">‹</button>
+    <img alt="Zvětšený náhled">
+    <button class="lightbox-arrow lightbox-next" type="button" aria-label="Další fotografie">›</button>
+  `;
   document.body.appendChild(lightbox);
 
+  const galleryItems = Array.from(zoomableCards)
+    .map((card) => ({
+      card,
+      image: card.querySelector("img"),
+    }))
+    .filter((item) => item.image);
   const lightboxImage = lightbox.querySelector("img");
-  const closeButton = lightbox.querySelector("button");
+  const closeButton = lightbox.querySelector(".lightbox-close");
+  const prevButton = lightbox.querySelector(".lightbox-prev");
+  const nextButton = lightbox.querySelector(".lightbox-next");
+  let activeImageIndex = 0;
+
+  const showImage = (index) => {
+    activeImageIndex = (index + galleryItems.length) % galleryItems.length;
+    const image = galleryItems[activeImageIndex].image;
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+  };
 
   const closeLightbox = () => {
     lightbox.classList.remove("is-open");
     lightboxImage.removeAttribute("src");
   };
 
-  zoomableCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const image = card.querySelector("img");
-      if (!image) {
-        return;
-      }
-
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
+  galleryItems.forEach((item, index) => {
+    item.card.addEventListener("click", (event) => {
+      event.preventDefault();
+      showImage(index);
       lightbox.classList.add("is-open");
     });
   });
 
   closeButton.addEventListener("click", closeLightbox);
+  prevButton.addEventListener("click", () => showImage(activeImageIndex - 1));
+  nextButton.addEventListener("click", () => showImage(activeImageIndex + 1));
+
   lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) {
       closeLightbox();
@@ -65,24 +69,21 @@ if (zoomableCards.length) {
   });
 
   window.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("is-open")) {
+      return;
+    }
+
     if (event.key === "Escape") {
       closeLightbox();
     }
-  });
-}
 
-if (canUseTilt) {
-  interactiveCards.forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      const bounds = card.getBoundingClientRect();
-      const rotateY = ((event.clientX - bounds.left) / bounds.width - 0.5) * 8;
-      const rotateX = ((event.clientY - bounds.top) / bounds.height - 0.5) * -8;
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-    });
+    if (event.key === "ArrowLeft") {
+      showImage(activeImageIndex - 1);
+    }
 
-    card.addEventListener("pointerleave", () => {
-      card.style.transform = "";
-    });
+    if (event.key === "ArrowRight") {
+      showImage(activeImageIndex + 1);
+    }
   });
 }
 

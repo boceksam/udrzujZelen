@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
@@ -21,7 +21,7 @@
     <header class="topbar">
       <a class="brand" href="#uvod" aria-label="Udržuj zeleň domů">
         <span class="brand-mark">
-          <img src="assets/logo.svg" alt="Logo Udržuj zeleň">
+          <img src="assets/logo.png" alt="Logo Udržuj zeleň">
         </span>
         <span class="brand-text">
           <strong>Udržuj zeleň</strong>
@@ -40,104 +40,108 @@
 
     <main>
       <section class="hero section" id="uvod">
-        <div class="hero-backdrop parallax-layer">
-          <img src="assets/hero-landscape.svg" alt="Ilustrační zahrada a upravený trávník">
+        <div class="hero-backdrop" aria-hidden="true">
+          <img decoding="async" fetchpriority="high" src="Foto/2/20220523_182030.jpg" alt="">
         </div>
         <div class="hero-overlay"></div>
 
-        <div class="hero-top reveal">
-          <p class="eyebrow">Péče o zeleň, která je vidět</p>
-          <h1>Udržuj zeleň</h1>
-          <p class="hero-intro">Prémiová údržba trávníkům, rekultivace zahrad kácení stromu včetně frezovaní pařezu.</p>
-        </div>
-
         <div class="hero-main">
           <div class="hero-copy reveal">
-            <h2>Reprezentativní vzhled pozemku bez starostí a bez kompromisů.</h2>
+            <p class="eyebrow">Péče o zeleň, která je vidět</p>
+            <h1>Udržuj zeleň</h1>
+            <h2>Reprezentativní a dokonale upravený pozemek bez starostí a bez kompromisů.</h2>
             <p class="lead">
-              Pomáháme domům, firmám i areálům vypadat upraveně, hodnotně a profesionálně.
-              Největší důraz klademe na košení trávníků, pravidelnou údržbu a výsledek, který
-              zanechá silný první dojem.
+              Postaráme se o kompletní péči o vaši zeleň tak, aby váš prostor vždy působil upraveně,
+              profesionálně a zanechal silný první dojem.
             </p>
-            <div class="hero-text-list">
-              <span>Košení jako hlavní specializace</span>
-              <span>Košení a údržba pozemku</span>
-              <span>Rizikové kácení a frézovaní pařezů</span>
+            <div class="hero-actions">
+              <a class="button" href="#kontakt">Chci nabídku</a>
+              <a class="button button-ghost" href="#cennik">Zobrazit ceník</a>
+            </div>
+
+            <div class="hero-metrics">
+              <article>
+                <strong>Košení jako priorita</strong>
+                <span>Pravidelné i jednorázové sekání s čistým dokončením</span>
+              </article>
+              <article>
+                <strong>Kompletní servis</strong>
+                <span>Údržba zeleně, zahrady, firemní areály i rizikové kácení</span>
+              </article>
+              <article>
+                <strong>Výsledek bez chaosu</strong>
+                <span>Po práci zůstává upravený a reprezentativní prostor</span>
+              </article>
             </div>
           </div>
 
-          <div class="hero-photo-wrap reveal reveal-delay">
-            <div class="hero-photo-card floating-card">
-              <img src="assets/gallery-1.svg" alt="Ukázka precizně upraveného trávníku">
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-actions-block reveal">
-          <div class="hero-actions">
-            <a class="button" href="#kontakt">Chci nabídku</a>
-            <a class="button button-ghost" href="#cennik">Zobrazit ceník</a>
-          </div>
-          <div class="hero-metrics hero-metrics-bar">
-            <article>
-              <strong>Košení jako priorita</strong>
-              <span>Pravidelné i jednorázové sekání s čistým dokončením</span>
-            </article>
-            <article>
-              <strong>Kompletní servis</strong>
-              <span>Údržba zeleně, zahrady, firemní areály i rizikové kácení</span>
-            </article>
-            <article>
-              <strong>Výsledek bez chaosu</strong>
-              <span>Po práci zůstává upravený a reprezentativní prostor</span>
-            </article>
-          </div>
+          <figure class="hero-visual reveal reveal-delay">
+            <img decoding="async" src="Foto/2/20240719_073822.jpg" alt="Ukázka údržby pozemku technikou">
+          </figure>
         </div>
       </section>
 
-      <section class="section services" id="sluzby">
+      <section class="section" id="sluzby">
         <div class="section-heading reveal">
           <p class="eyebrow">Naše služby</p>
           <h2>Od pravidelného sečení až po náročné zásahy.</h2>
           <p>
-            Web je postavený tak, aby zákazník hned pochopil, že zvládnete běžnou údržbu i
-            práce, do kterých se jen tak někdo nepustí.
+            Postaráme se o pravidelnou péči i náročnější zásahy, které vyžadují zkušenost,
+            techniku a čisté dokončení bez zbytečného chaosu.
           </p>
         </div>
         <div class="service-grid">
-          <article class="service-card service-card-featured reveal">
-            <span class="service-tag">Hlavní služba</span>
-            <h3>Košení trávníků a pravidelná údržba</h3>
-            <p>
-              Pravidelné i jednorázové sekání travnatých ploch, dosekání detailů, úklid po práci
-              a nastavení plánu péče tak, aby trávník působil hustě, čistě a reprezentativně.
-            </p>
+          <article class="service-visual reveal">
+            <img loading="lazy" decoding="async" src="Foto/2/20240719_073822.jpg" alt="Technika při údržbě pozemku">
+            <div>
+              <span class="service-tag">Hlavní specializace</span>
+              <h3>Košení trávníků a pravidelná údržba</h3>
+              <p>
+                Pravidelné i jednorázové sekání travnatých ploch, dosekání detailů, úklid po práci
+                a nastavení plánu péče tak, aby trávník působil hustě, čistě a reprezentativně.
+              </p>
+            </div>
           </article>
-          <article class="service-card reveal">
-            <h3>Údržba zeleně</h3>
-            <p>Střih keřů, tvarování porostů, úprava záhonů, sezónní servis a dlouhodobá péče o areály.</p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Zakládání zahrad</h3>
-            <p>Návrh a realizace zelených ploch, nové trávníky, výsadby a zahrady s jasnou kompozicí.</p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Rizikové kácení</h3>
-            <p>Bezpečné řešení problematických stromů v blízkosti staveb, cest nebo elektrického vedení.</p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Firemní a bytové areály</h3>
-            <p>Pravidelný servis, který udrží okolí firmy nebo objektu v perfektním stavu po celý rok.</p>
-          </article>
-          <article class="service-card reveal">
-            <h3>Jednorázové zásahy</h3>
-            <p>Rychlá pomoc před sezonou, po zanedbání péče nebo před důležitou návštěvou či akcí.</p>
-          </article>
+          <div class="service-list">
+            <article class="service-card reveal">
+              <span class="service-number">01</span>
+              <h3>Košení trávníků a pravidelná údržba</h3>
+              <p>
+                Pravidelné i jednorázové sekání travnatých ploch, dosekání detailů, úklid po práci
+                a nastavení plánu péče tak, aby trávník působil hustě, čistě a reprezentativně.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <span class="service-number">02</span>
+              <h3>Údržba zeleně</h3>
+              <p>Střih keřů, tvarování porostů, úprava záhonů, sezónní servis a dlouhodobá péče o areály.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="service-number">03</span>
+              <h3>Zakládání zahrad</h3>
+              <p>Návrh a realizace zelených ploch, nové trávníky, výsadby a zahrady s jasnou kompozicí.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="service-number">04</span>
+              <h3>Rizikové kácení</h3>
+              <p>Bezpečné řešení problematických stromů v blízkosti staveb, cest nebo elektrického vedení.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="service-number">05</span>
+              <h3>Firemní a bytové areály</h3>
+              <p>Pravidelný servis, který udrží okolí firmy nebo objektu v perfektním stavu po celý rok.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="service-number">06</span>
+              <h3>Jednorázové zásahy</h3>
+              <p>Rychlá pomoc před sezonou, po zanedbání péče nebo před důležitou návštěvou či akcí.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="section pricing" id="cennik">
-        <div class="section-heading reveal">
+      <section class="section" id="cennik">
+        <div class="section-heading pricing-heading reveal">
           <p class="eyebrow">Ceník služeb</p>
           <h2>Přehled orientačních cen.</h2>
         </div>
@@ -165,62 +169,66 @@
         </div>
       </section>
 
-      <section class="section split-section" id="proc-my">
-        <div class="section-heading section-heading-centered reveal">
-          <p class="eyebrow">Proč si vyberou právě vás</p>
-          <h2>Nejde jen o posekanou trávu. Jde o pocit, že je vše pod kontrolou.</h2>
+      <section class="section" id="proc-my">
+        <div class="section-heading section-heading-centered why-heading reveal">
+          <p class="eyebrow">Proč si vybrat právě nás</p>
+          <h2>Nejde jen o posekanou trávu. Jde o jistotu, že je vše pod kontrolou.</h2>
         </div>
-        <div class="why-grid">
-          <div class="why-photo reveal">
-            <img src="assets/team-scene.svg" alt="Tým při údržbě zeleně">
-          </div>
-          <div class="feature-list reveal reveal-delay">
-            <article>
-              <strong>Silný první dojem</strong>
-              <p>Upravený exteriér vytváří důvěru u sousedů, návštěv i klientů ještě dřív, než zazvoní.</p>
-            </article>
-            <article>
-              <strong>Pořádek po práci</strong>
-              <p>Výsledek nepůsobí jako zásah, ale jako profesionálně opečovaný prostor připravený k používání.</p>
-            </article>
-          </div>
-          <div class="feature-list reveal">
-            <article>
-              <strong>Spolehlivý rytmus údržby</strong>
-              <p>Pravidelný servis drží zahradu i areál ve formě bez stresu a bez přerostlých překvapení.</p>
-            </article>
-            <article>
-              <strong>Domluva bez komplikací</strong>
-              <p>Zákazník přesně ví, co se bude dělat, kdy se to udělá a jak bude prostor po zásahu vypadat.</p>
-            </article>
-          </div>
-          <div class="why-photo reveal reveal-delay">
-            <img src="assets/gallery-4.svg" alt="Ukázka upraveného areálu">
-          </div>
+        <div class="why-layout">
+          <article class="why-row reveal">
+            <div class="feature-list why-copy">
+              <article>
+                <strong>Silný první dojem</strong>
+                <p>Upravený pozemek dělá dojem na první pohled. Dům, firma i zahrada působí čistě a profesionálně.</p>
+              </article>
+              <article>
+                <strong>Pořádek po práci</strong>
+                <p>Po dokončení vše uklidíme a odpad odvezeme. Nezůstane po nás nepořádek, ale hotový výsledek.</p>
+              </article>
+            </div>
+            <figure class="why-photo-panel">
+              <img loading="lazy" decoding="async" src="Foto/2/20220523_182030.jpg" alt="Upravený zelený pozemek">
+            </figure>
+          </article>
+
+          <article class="why-row why-row-reverse reveal reveal-delay">
+            <div class="feature-list why-copy">
+              <article>
+                <strong>Spolehlivost</strong>
+                <p>Platí, na čem se domluvíme. Přijdeme včas a práci odvedeme bez zbytečných řečí.</p>
+              </article>
+              <article>
+                <strong>Domluva bez komplikací</strong>
+                <p>Stačí zavolat nebo napsat. Domluvíme cenu, termín a vy se o nic nestaráte.</p>
+              </article>
+            </div>
+            <figure class="why-photo-panel">
+              <img loading="lazy" decoding="async" src="Foto/2/PhotoCollage_1743667752389.jpg" alt="Koláž zahradnických prací a realizací">
+            </figure>
+          </article>
         </div>
       </section>
 
-      <section class="section gallery-preview">
-        <div class="section-heading reveal">
+      <section class="section">
+        <div class="section-heading gallery-preview-heading reveal">
           <p class="eyebrow">Ukázky realizací</p>
-          <h2>Galerie, která má chuť přesvědčit.</h2>
+          <h2>Realizace, které mluví za nás.</h2>
           <p>
-            Teď jsou zde ilustrační SVG vizuály. Vaše vlastní fotografie stačí později jen vyměnit
-            v adresáři `assets`.
+            Reálné ukázky údržby zeleně, zahradnických prací a zásahů v terénu.
           </p>
         </div>
         <div class="gallery-grid">
           <a class="gallery-card reveal" href="galerie.html">
-            <img src="assets/gallery-1.svg" alt="Posekaný trávník u rodinného domu">
-            <span>Pravidelně udržovaný trávník</span>
+            <img loading="lazy" decoding="async" src="Foto/2/2.jpg" alt="Ukázka údržby zeleně">
+            <span>Údržba zeleně</span>
           </a>
           <a class="gallery-card reveal" href="galerie.html">
-            <img src="assets/gallery-2.svg" alt="Moderní zahrada se zelení">
-            <span>Zakládání a úpravy zahrad</span>
+            <img loading="lazy" decoding="async" src="Foto/2/20240605_184739.jpg" alt="Zahradnická realizace">
+            <span>Zahradnické realizace</span>
           </a>
           <a class="gallery-card reveal" href="galerie.html">
-            <img src="assets/gallery-3.svg" alt="Rizikové kácení stromu">
-            <span>Bezpečné zásahy a kácení</span>
+            <img loading="lazy" decoding="async" src="Foto/1/IMG_4413.jpeg" alt="Ukázka hotové realizace">
+            <span>Hotové realizace</span>
           </a>
         </div>
         <div class="gallery-cta reveal">
@@ -243,7 +251,7 @@
                 ořezal, zkrátil, vše odvezl a přebytky naštěpkoval. Navázali jsme dlouhodobou spolupráci.
                 Naprostá spokojenost.”
               </p>
-              <strong>Spokojený klient</strong>
+              <strong>Klient Udržuj zeleň</strong>
             </article>
             <article class="testimonial-card">
               <div class="testimonial-stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
@@ -258,7 +266,7 @@
               <p>
                 “Rychlá domluva, perfektně odvedená práce. Vřele doporučuji.”
               </p>
-              <strong>Spokojený klient</strong>
+              <strong>Klient Udržuj zeleň</strong>
             </article>
           </div>
           <button class="carousel-button" id="nextReview" aria-label="Další recenze">→</button>
@@ -266,7 +274,7 @@
         <div class="carousel-dots" id="reviewDots" aria-label="Přepínání recenzí"></div>
       </section>
 
-      <section class="section contact" id="kontakt">
+      <section class="section" id="kontakt">
         <div class="contact-panel reveal">
           <div>
             <p class="eyebrow">Kontakt</p>
@@ -275,7 +283,7 @@
           <div class="contact-card">
             <a href="tel:+420734369304">+420 734 369 304</a>
             <a href="mailto:udrzujzelen@seznam.cz">udrzujzelen@seznam.cz</a>
-            <p>Působnost: okolí města, obce i firemní areály</p>
+            <p>Působnost: okolní obce, města i firemní areály</p>
             <a class="button" href="mailto:udrzujzelen@seznam.cz">Napsat poptávku</a>
           </div>
         </div>
