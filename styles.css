@@ -1676,7 +1676,6 @@ h3 {
     min-height: 178px;
     border-radius: 14px;
   }
-
 }
 
 @media (hover: none), (pointer: coarse) {
@@ -1692,7 +1691,6 @@ h3 {
     box-shadow: var(--shadow);
     filter: none;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
