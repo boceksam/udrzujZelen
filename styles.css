@@ -646,33 +646,6 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.74) saturate(0.95);
-}
-
-.service-visual::after {
-  content: "";
-  grid-area: 1 / 1;
-  background:
-    linear-gradient(180deg, rgba(4, 13, 8, 0.06) 0%, rgba(4, 13, 8, 0.82) 100%),
-    linear-gradient(90deg, rgba(4, 13, 8, 0.36), transparent);
-}
-
-.service-visual div {
-  grid-area: 1 / 1;
-  align-self: end;
-  position: relative;
-  z-index: 1;
-  padding: clamp(22px, 3vw, 34px);
-}
-
-.service-visual h3 {
-  max-width: 540px;
-  font-size: clamp(1.6rem, 2.8vw, 2.45rem);
-  line-height: 1.06;
-}
-
-.service-visual p {
-  max-width: 560px;
 }
 
 .service-list {
@@ -1188,6 +1161,22 @@ h3 {
   transition: transform 350ms ease, filter 350ms ease;
 }
 
+.mosaic-collage {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(103, 214, 125, 0.14);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.mosaic-collage .mosaic-card {
+  min-height: clamp(130px, 15vw, 205px);
+  border-radius: 14px;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -1445,6 +1434,14 @@ h3 {
     min-height: 210px;
   }
 
+  .mosaic-collage {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mosaic-collage .mosaic-card {
+    min-height: 160px;
+  }
+
   .mosaic-card:last-child {
     grid-column: span 2;
   }
@@ -1675,6 +1672,18 @@ h3 {
   .mosaic-wide {
     min-height: 178px;
     border-radius: 14px;
+  }
+
+  .mosaic-collage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 8px;
+    border-radius: 18px;
+  }
+
+  .mosaic-collage .mosaic-card {
+    min-height: 128px;
+    border-radius: 12px;
   }
 }
 
